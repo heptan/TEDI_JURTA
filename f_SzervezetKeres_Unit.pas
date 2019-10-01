@@ -20,6 +20,8 @@ type
     le_jurtanev: TLabeledEdit;
     le_jurtaado: TLabeledEdit;
     BitBtn2: TBitBtn;
+    le_tirkod: TLabeledEdit;
+    le_jurtakod: TLabeledEdit;
     procedure bb_keresClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure SZURESAfterScroll(DataSet: TDataSet);
@@ -60,6 +62,8 @@ begin
        SQL.Add('and a.szervezet_nev like '+IDCHAR+'%'+StringReplace(le_szervezet.Text,' ','%',[rfReplaceAll])+'%'+IDCHAR+' ');
     If le_adoszam.Text<>'' Then
        SQL.Add('and a.adoszam like '+IDCHAR+le_adoszam.Text+'%'+IDCHAR+' ');
+    if le_tirkod.Text<>'' then
+       SQL.Add('and a.szervezet_id='+le_tirkod.Text+' ');
     SQL.Add('Order By szervezet_nev');
   end;
   With LISTA do
@@ -72,6 +76,8 @@ begin
        SQL.Add('and a.nev like '+IDCHAR+'%'+StringReplace(le_jurtanev.Text,' ','%',[rfReplaceAll])+'%'+IDCHAR+' ');
     If le_jurtaado.Text<>'' Then
        SQL.Add('and a.adoszam like '+IDCHAR+le_jurtaado.Text+'%'+IDCHAR+' ');
+    if le_jurtakod.Text<>'' then
+       SQL.Add('and a.kod='+IDCHAR+le_jurtakod.Text+IDCHAR+' ');
     SQL.Add('Order By nev');
   end;
   inherited;
@@ -109,7 +115,6 @@ var s: String;
 begin
   inherited;
   if LISTA.FieldByName('tipus').AsString='Személy' then s:='42' else s:='';
-
   Modositas('szervezet',[
     'adoszam='+LISTA.FieldByName('adoszam').AsString,
     'cegjegyzekszam='+LISTA.FieldByName('cegjegyzekszam').AsString,

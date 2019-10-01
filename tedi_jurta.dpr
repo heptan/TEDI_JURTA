@@ -19,7 +19,8 @@ uses
   f_Indito_Unit in 'f_Indito_Unit.pas' {f_Indito},
   f_CimSzerkeszto_Unit in 'f_CimSzerkeszto_Unit.pas' {f_CimSzerkeszto},
   f_AdatMigracio_Unit in 'f_AdatMigracio_Unit.pas' {f_AdatMigracio},
-  f_SzervezetKeres_Unit in 'f_SzervezetKeres_Unit.pas' {f_SzervezetKeres};
+  f_SzervezetKeres_Unit in 'f_SzervezetKeres_Unit.pas' {f_SzervezetKeres},
+  f_EleresAdat_Unit in 'f_EleresAdat_Unit.pas' {f_EleresAdat};
 
 {$R *.res}
 
@@ -43,6 +44,7 @@ begin
   TStyleManager.TrySetStyle('Luna');
   Application.CreateForm(TAdatModul, AdatModul);
   Application.CreateForm(Tf_Foablak, f_Foablak);
+  Application.CreateForm(Tf_EleresAdat, f_EleresAdat);
   if Not FileExists(ExtractFilePath(ParamStr(0)) + 'tedi.ini') Then
   Begin
     Uzenet('Nem találom a program futtatásához szükséges tedi.ini fájlt! A program futása leáll.');

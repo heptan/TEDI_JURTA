@@ -17,10 +17,12 @@ inherited f_AdatMigracio: Tf_AdatMigracio
     end
     inherited bb_ok: TBitBtn
       Left = 732
+      Visible = False
       ExplicitLeft = 732
     end
     inherited bb_nyomtat: TBitBtn
       Left = 690
+      Visible = False
       ExplicitLeft = 690
     end
     inherited bb_excel: TBitBtn
@@ -33,6 +35,7 @@ inherited f_AdatMigracio: Tf_AdatMigracio
     end
     inherited bb_csv: TBitBtn
       Left = 605
+      Visible = False
       ExplicitLeft = 605
     end
   end
@@ -44,6 +47,12 @@ inherited f_AdatMigracio: Tf_AdatMigracio
     Left = 774
     Visible = False
     ExplicitLeft = 774
+  end
+  inherited p_keres: TPanel
+    Left = 256
+    Top = 171
+    ExplicitLeft = 256
+    ExplicitTop = 171
   end
   object BitBtn1: TBitBtn [4]
     Left = 16

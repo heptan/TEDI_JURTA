@@ -5,7 +5,7 @@
         <FrameworkType>VCL</FrameworkType>
         <MainSource>tedi_jurta.dpr</MainSource>
         <Base>True</Base>
-        <Config Condition="'$(Config)'==''">Release</Config>
+        <Config Condition="'$(Config)'==''">Debug</Config>
         <Platform Condition="'$(Platform)'==''">Win32</Platform>
         <TargetedPlatforms>3</TargetedPlatforms>
         <AppType>Application</AppType>
@@ -184,6 +184,10 @@
         </DCCReference>
         <DCCReference Include="f_SzervezetKeres_Unit.pas">
             <Form>f_SzervezetKeres</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="f_EleresAdat_Unit.pas">
+            <Form>f_EleresAdat</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <BuildConfiguration Include="Release">
